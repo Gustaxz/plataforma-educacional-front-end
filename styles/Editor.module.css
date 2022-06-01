@@ -1,0 +1,75 @@
+.header {
+    padding: 20px;
+    background: #0077b6;
+}
+
+.main_header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    border-radius: 50%;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+}
+
+.main_header_logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+    color: white;
+}
+
+.header_anchor {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.input_title {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 20px auto;
+}
+
+.input_select {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+}
+
+.editor {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.div_send {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.send {
+    padding: 10px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    animation: spin 1s linear infinite;
+}
