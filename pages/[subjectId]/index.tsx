@@ -1,6 +1,6 @@
 import Link from "next/link"
-import axios from "axios"
 import { subjects } from "../../assets/subjects"
+import { api } from "../../assets/api"
 
 interface ResponseType {
     id: string
@@ -39,7 +39,7 @@ export function getStaticPaths() {
 export async function getStaticProps({params} : any) {
     const id = params.subjectId
     
-    const response = await axios.get(`http://localhost:3333/subjects?subject=${id}`).then(response => response.data)
+    const response = await api.get(`/subjects?subject=${id}`).then(response => response.data)
     
     return {
         props: {

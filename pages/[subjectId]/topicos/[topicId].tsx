@@ -1,6 +1,6 @@
 import axios from "axios"
 import parse from "html-react-parser"
-import { GetStaticProps } from "next"
+import { api } from "../../../assets/api"
 
 import styles from "../../../styles/Topic.module.css"
 
@@ -35,7 +35,7 @@ export default function Topics({response}: TopicsProps) {
 export async function getStaticPaths() {
 
 
-    const response: ResponseType[] = await axios.get(`http://localhost:3333/subjects`)
+    const response: ResponseType[] = await api.get(`/subjects`)
         .then(response => response.data)
 
     console.log(response)
@@ -49,7 +49,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({params} : any) {
     const id = params.topicId
 
-    const response = await axios.get(`http://localhost:3333/topics?topic=${id}`).then(response => response.data)
+    const response = await api.get(`/topics?topic=${id}`).then(response => response.data)
     return {
         props: { response },
         revalidate: 10,
