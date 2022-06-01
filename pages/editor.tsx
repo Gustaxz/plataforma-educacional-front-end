@@ -51,7 +51,7 @@ function Editor() {
         <select onChange={(e) => setSubject(e.target.value)}>
           {subjects.map(item => {
             return (
-              <option value={`${item.subjectId}`}>{item.name}</option>
+              <option key = {item.id} value={`${item.subjectId}`}>{item.name}</option>
             )
           })}
         </select>
