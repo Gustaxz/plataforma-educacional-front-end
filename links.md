@@ -13,3 +13,5 @@
 <a href="https://www.flaticon.com/free-icons/bacteria" title="bacteria icons">Bacteria icons created by Freepik - Flaticon</a>
 
 <a href="https://br.freepik.com/fotos-vetores-gratis/escritor">Escritor vetor criado por pch.vector - br.freepik.com</a>
+
+<a href="https://br.freepik.com/fotos-vetores-gratis/ensino-online">Ensino online vetor criado por pch.vector - br.freepik.com</a>

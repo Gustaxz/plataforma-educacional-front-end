@@ -2,10 +2,12 @@ import Link from "next/link"
 import { subjects } from "../../assets/subjects"
 import { api } from "../../assets/api"
 import styles from "../../styles/Subject.module.css"
+import TopicLink from "../../components/TopicLink"
 
 interface ResponseType {
     id: string
     title: string
+    createdAt: Date
 }
 
 interface PropsType {
@@ -22,13 +24,22 @@ export default function Subjects({ id, response } : PropsType) {
             <p>{subject?.name}</p>
             <Link href="/"><a>HOME</a></Link>
         </header>
-        {response.map(item => {
-            return (
-                <>
-                <Link key = {item.id}href={`/${id}/topicos/${item.id}`}><a>{item.title}</a></Link><br />
-                </>
-            )
-        })}
+        <div className={styles.container_topics}>
+            {response.map(item => {
+                return (
+                    <>
+                    <TopicLink 
+                        key={item.id} 
+                        createdAt = {item.createdAt} 
+                        id = {item.id} 
+                        name = {item.title}
+                        subjectId = {id}
+                        color = {subject?.color}
+                    />
+                    </>
+                )
+            })}
+        </div>
         </>
         
     )

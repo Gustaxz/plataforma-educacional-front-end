@@ -23,13 +23,13 @@ const Home = () => {
       </header> 
       <main>
       <section className={styles.container_text}>
-          <p>Aqui você encontra conteúdo de ótima qualidade, com professores qualificados e experientes.
-            O compromisso deles e o nosso é com seu aprendizado! Aproveite e aprenda bastante!  
-          </p>
-          <Image src= "/images/main.jpg" width='500px' height = '300px' alt = 'menina estudando'/>
+          <h3>
+            Seja bem vindo a Sua plataforma de estudo!
+          </h3>
+          <Image src= "/images/main.jpg" width='450px' height = '300px' alt = 'menina estudando'/>
       </section>
       <section className={styles.container_cards_full}>
-        <h2>Nossas matérias: </h2>
+        <h2>Escolha sua próxima área de ensino: </h2>
         <div className={styles.container_cards}>
           { 
               subjects.map((item) => {

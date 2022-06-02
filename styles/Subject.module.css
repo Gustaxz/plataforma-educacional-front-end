@@ -24,3 +24,33 @@
 .header a:hover {
     opacity: 0.9;
 }
+
+.container_topics {
+    margin: 6% 0 10% 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.topic_card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 40%;
+    padding: 1.8%;
+    border-left: 5px solid;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(43, 42, 42, 0.719);
+}
+
+.topic_card a {
+    font-size: 30px;
+    text-decoration: none;
+    color: rgb(235, 21, 181);
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+}
+
+.topic_card p {
+    opacity: 0.5;
+}
