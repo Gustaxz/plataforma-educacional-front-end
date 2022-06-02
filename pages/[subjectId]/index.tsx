@@ -50,4 +50,5 @@ export async function getStaticProps({params} : any) {
         },
         revalidate: 10, // after 10 seconds
     }
+    
 }
