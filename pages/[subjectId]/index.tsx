@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { subjects } from "../../assets/subjects"
 import { api } from "../../assets/api"
+import { GetStaticProps } from "next"
 
 interface ResponseType {
     id: string
@@ -12,7 +13,7 @@ interface PropsType {
     response: ResponseType[]
 }
 
-export default function Subjects({ id, response} : PropsType) {
+export default function Subjects({ id, response } : PropsType) {
 
     return (
         <>
@@ -20,7 +21,7 @@ export default function Subjects({ id, response} : PropsType) {
         {response.map(item => {
             return (
                 <>
-                <Link href={`/${id}/topicos/${item.id}`}><a>{item.title}</a></Link><br />
+                <Link key = {item.id}href={`/${id}/topicos/${item.id}`}><a>{item.title}</a></Link><br />
                 </>
             )
         })}
@@ -30,8 +31,10 @@ export default function Subjects({ id, response} : PropsType) {
 }
 
 export function getStaticPaths() {
+    let paths = subjects.map((item) => ({ params: { subjectId: item.subjectId}}))
+
     return {
-        paths: subjects.map((item) => ({ params: { subjectId: item.subjectId}})),
+        paths,
         fallback: false
     }
 }
@@ -39,8 +42,7 @@ export function getStaticPaths() {
 export async function getStaticProps({params} : any) {
     const id = params.subjectId
     
-    const response = await api.get(`/subjects?subject=${id}`).then(response => response.data)
-    
+    const response = await api.get(`/subjects?subject=${id}`).then(response => response.data).catch(e => console.log(e))
     return {
         props: {
              id,

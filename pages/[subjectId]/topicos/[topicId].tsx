@@ -33,12 +33,14 @@ export default function Topics({response}: TopicsProps) {
 
 export async function getStaticPaths() {
 
-
     const response: ResponseType[] = await api.get(`/subjects`)
         .then(response => response.data)
-    
+
+
+    let paths = response.map((item) => ({ params: { subjectId: item.subject, topicId: item.id.toString()}}))
+
     return {
-        paths: response.map((item) => ({ params: { subjectId: item.subject, topicId: item.id.toString()}})),
+        paths,
         fallback: 'blocking'
     }
 }
@@ -47,6 +49,8 @@ export async function getStaticProps({params} : any) {
     const id = params.topicId
 
     const response = await api.get(`/topics?topic=${id}`).then(response => response.data)
+
+
     return {
         props: { response },
         revalidate: 10,
