@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '/',
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
@@ -9,7 +8,7 @@ const nextConfig = {
     buildActivityPosition: 'bottom-right',
   },
   images: {
-    path: `${basePath}/_next/image`,
+    path: `$./_next/image`,
   }
 }
 
