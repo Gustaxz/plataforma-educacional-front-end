@@ -11,7 +11,7 @@ interface sendaDataProps {
 }
 
 export async function sendData({container, title, subject} : sendaDataProps) {
-    await api.post('/', {
+    await api.post('https://plataforma-educacional-back-end-production.up.railway.app', {
         container,
         title, 
         subject

@@ -7,6 +7,9 @@ const nextConfig = {
   devIndicators: {
     buildActivityPosition: 'bottom-right',
   },
+  images: {
+    path: `${basePath}/_next/image`,
+  }
 }
 
 module.exports = nextConfig

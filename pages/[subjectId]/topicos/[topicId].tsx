@@ -20,7 +20,6 @@ interface TopicsProps {
 }
 
 export default function Topics({response}: TopicsProps) {
-    console.log(response)
     return (
         <>
             <h1>Você está no tópico {response.title}</h1>
@@ -37,8 +36,6 @@ export async function getStaticPaths() {
 
     const response: ResponseType[] = await api.get(`/subjects`)
         .then(response => response.data)
-
-    console.log(response)
     
     return {
         paths: response.map((item) => ({ params: { subjectId: item.subject, topicId: item.id.toString()}})),
