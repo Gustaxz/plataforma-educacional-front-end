@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { subjects } from "../../assets/subjects"
 import { api } from "../../assets/api"
-import { GetStaticProps } from "next"
+import styles from "../../styles/Subject.module.css"
 
 interface ResponseType {
     id: string
@@ -14,10 +14,14 @@ interface PropsType {
 }
 
 export default function Subjects({ id, response } : PropsType) {
+    const subject = subjects.find(e => (e.subjectId === id))
 
     return (
         <>
-        <h1>Você está na sessão {id}</h1>
+        <header className={styles.header} style = {{backgroundColor: subject?.color}}>
+            <p>{subject?.name}</p>
+            <Link href="/"><a>HOME</a></Link>
+        </header>
         {response.map(item => {
             return (
                 <>
