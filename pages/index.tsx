@@ -26,7 +26,7 @@ const Home = () => {
           <p>Aqui você encontra conteúdo de ótima qualidade, com professores qualificados e experientes.
             O compromisso deles e o nosso é com seu aprendizado! Aproveite e aprenda bastante!  
           </p>
-          <Image src= "/../public/images/main.jpg" width='500px' height = '300px' alt = 'menina estudando'/>
+          <Image src= "/images/main.jpg" width='500px' height = '300px' alt = 'menina estudando'/>
       </section>
       <section className={styles.container_cards_full}>
         <h2>Nossas matérias: </h2>
