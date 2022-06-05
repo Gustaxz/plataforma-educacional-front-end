@@ -127,6 +127,11 @@
         height: 10vh;
     }
 
+    .container {
+        margin-top: 25%;
+        align-items: flex-start;
+    }
+
     .profile {
         margin-left: 4px;
     }
