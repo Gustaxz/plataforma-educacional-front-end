@@ -1,14 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Passion+One&family=Poppins&family=Roboto+Mono&display=swap');
 
+
 .header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 
+    height: 100vh;
+
+    background: linear-gradient(30deg, #858ae4, #5d64da);
+}
+
+
+.header_top {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    color: white;
+}
+
+
+
+.header_container {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1 {
+    flex-wrap: wrap;
+    
     padding: 20px;
+    height: 100%;
+
+    text-align: center;
+    font-size: 4rem;
+
     color: white;
 
-    background: #0077b6;
+    font-family: 'Oswald', sans-serif;
+}
+
+.header p:nth-child(2) {
+    width: 60%;
+    color: white;
+    text-align: justify;
+    font-size: 1.3rem;
+    margin-top: 3%;
+    font-family: 'Poppins', sans-serif;
 }
 
 .header:first-child {
@@ -17,28 +58,36 @@
     font-weight: bold;
 }
 
-.header button {
-    font-size: 18px;
-    padding: 10px;
-    color: white;
-}
-
-.container_text {
-    padding: 90px 10% 5% 10%;
+.links {
+    margin-top: 6%;
     display: flex;
+    width: 50%;
     justify-content: space-between;
-    align-items: center;
 }
 
-.container_text h3 {
-    display: flex;
-    flex-wrap: wrap;
-    width: 350px;
-    font-size: 50px;
-    font-family: 'Oswald', sans-serif;
-    opacity: 0.9;
+.links a {
+    font-size: 1.4rem;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 32px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    transition: 0.2s;
 }
 
+.links a:hover {
+    opacity: 0.8;
+}
+
+
+.links a:nth-child(1) {
+    background: #c7c741;
+
+}
+
+.links a:nth-child(2) {
+    background: #A068D9;
+}
 
 .container_cards_full {
     margin: 8% 0;
@@ -88,4 +137,64 @@
     color: black;
     font-family: bold;
     font-size: 20px;
+}
+
+.footer {
+    background: #5d64da;
+    padding: 24px;
+
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.footer a {
+    color: white;
+}
+
+@media screen and (max-width: 920px) {
+    
+    .header_top {
+        justify-content: center;
+        width: 100vw;
+        padding: 5px 0;
+        margin-bottom: 56px;
+    }
+
+    .header {
+        justify-content: center;
+    } 
+
+    .header h1 {
+        font-size: 3rem;
+    }
+
+    .header p {
+        display: none;
+    }
+
+    .links {
+        margin-top: 56px;
+        width: 50vw;
+    }
+
+    .links a {
+        padding: 16px;
+    }
+
+    .container_cards_full h2 {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    .container_cards {
+        margin: 80px 0;
+    }
+  
+}
+
+@media screen and (max-width: 540px) {
+    .links {
+        width: 80vw;
+    }
 }

@@ -15,3 +15,7 @@
 <a href="https://br.freepik.com/fotos-vetores-gratis/escritor">Escritor vetor criado por pch.vector - br.freepik.com</a>
 
 <a href="https://br.freepik.com/fotos-vetores-gratis/ensino-online">Ensino online vetor criado por pch.vector - br.freepik.com</a>
+
+https://plataforma-educacional-back-end-production.up.railway.app
+
+<a href="https://www.flaticon.com/free-icons/sustainable" title="sustainable icons">Sustainable icons created by catkuro - Flaticon</a>

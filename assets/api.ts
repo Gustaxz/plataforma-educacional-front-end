@@ -1,19 +1,19 @@
 import axios from "axios"
+import getConfig from 'next/config';
+const { publicRuntimeConfig } = getConfig();
+
+
 
 export const api = axios.create({
-    baseURL: process.env.DB_HOST
+    baseURL: publicRuntimeConfig.backendUrl,
 })
 
-interface sendaDataProps {
-    container: string
-    title: string
-    subject: string
-}
 
-export async function sendData({container, title, subject} : sendaDataProps) {
-    await api.post('https://plataforma-educacional-back-end-production.up.railway.app', {
-        container,
-        title, 
-        subject
-    })
-}
+
+
+
+
+
+
+
+

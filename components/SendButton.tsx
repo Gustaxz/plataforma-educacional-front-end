@@ -1,13 +1,13 @@
 import styles from "../styles/Editor.module.css"
-import { sendData } from "../assets/api";
+import { sendData } from "../assets/useCases/subjectCases";
 import { useState } from "react";
 
 import { CircleNotch } from "phosphor-react"
 
 interface SendButtonProps {
     contentString: string
-    title: string
-    subject: string
+    title?: string
+    subject?: string
 }
 
 export default function SendButton({contentString, title, subject}: SendButtonProps) {

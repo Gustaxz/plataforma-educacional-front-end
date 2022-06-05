@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Passion+One&family=Poppins&family=Roboto+Mono&display=swap');
+
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    height: 100vh;
+}
+
+.form_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.side_bg {
+    background: #D8D948;
+}
+
+.message_container {
+    min-height: 2rem;
+    margin-bottom: 5%;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    min-height: 2rem;
+    font-family: 'Poppins', sans-serif;
+    background: rgb(235, 138, 138);
+    color: white;
+    border-radius: 10px;   
+}
+
+.form {
+    display: flex;
+    gap: 4%;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 40%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.inputs label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+}
+
+.inputs input {
+    padding: 4%;
+    border: none;
+    border-left: 2px solid #D9B073;
+    outline: none;
+    
+}
+
+.form_buttom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    padding: 10px 0;
+    background: #A068D9; 
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #D8D948;
+    font-family: 'Passion One', cursive;
+    height: 40px;
+}
+
+.form_container a {
+    margin-top: 4%;
+    text-align: center;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    animation: spin 1s linear infinite;
+}
+
+@media screen and (max-width: 520px) {
+    
+    .full_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .side_container {
+        display: none;
+    }
+
+    .form_container {
+        width: 100vw;
+    }
+
+    .form {
+        width: 85%;
+    }
+
+    .warning {
+        width: 100%;
+    }
+    
+}

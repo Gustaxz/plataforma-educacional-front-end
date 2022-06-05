@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import {  LegacyRef, RefObject, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 
 import styles from "../styles/Editor.module.css";
@@ -12,10 +12,11 @@ const JoditEditor = dynamic(importJodit, {
   ssr: false,
 });
 
+
 function Editor() {
   const [content, setContent] = useState("Comece a escrever");
-  const [subject, setSubject] = useState('')
-  const [title, setTitle] = useState('')
+  const titleForm = useRef<HTMLInputElement>(null)
+  const subjectForm = useRef<HTMLSelectElement>(null)
 
   const config = {
     readonly: false,
@@ -41,35 +42,34 @@ function Editor() {
         </Link>
       </header>
 
-      <div className={styles.input_title}>
-        <label htmlFor="title">Digite o título da publicação</label>
-        <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} />
-      </div>
+        <div className={styles.input_title}>
+          <label htmlFor="title">Digite o título da publicação</label>
+          <input type="text" name="title" ref={titleForm} />
+        </div>
 
-      <div className={styles.input_select}>
-        <p>Selecione a matéria da publicação</p>
-        <select onChange={(e) => setSubject(e.target.value)}>
-          {subjects.map(item => {
-            return (
-              <option key = {item.id} value={`${item.subjectId}`}>{item.name}</option>
-            )
-          })}
-        </select>
-      </div>
+        <div className={styles.input_select}>
+          <p>Selecione a matéria da publicação</p>
+          <select ref={subjectForm}>
+            {subjects.map(item => {
+              return (
+                <option key = {item.id} value={`${item.subjectId}`}>{item.name}</option>
+              )
+            })}
+          </select>
+        </div>
 
-
-      <div className={styles.editor}>
-        <JoditEditor
-          value={content}
-          config={config}
-          onBlur={(newContent) => {
-            setContent(newContent);
-          }}
-        />
-      </div>
-      <div className={styles.div_send}>
-        <SendButton contentString={contentString} title={title} subject={subject} />
-      </div>
+        <div className={styles.editor}>
+          <JoditEditor
+            value={content}
+            config={config}
+            onBlur={(newContent) => {
+              setContent(newContent);
+            }}
+          />
+        </div>
+        <div className={styles.div_send}>
+          <SendButton contentString={contentString} title={titleForm.current?.value} subject={subjectForm.current?.value} />
+        </div>
     </>
   );
 }

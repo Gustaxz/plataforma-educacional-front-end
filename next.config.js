@@ -7,6 +7,9 @@ const nextConfig = {
   devIndicators: {
     buildActivityPosition: 'bottom-right',
   },
+  publicRuntimeConfig: {
+    backendUrl: process.env.DB_HOST,
+  },
 }
 
 module.exports = nextConfig
