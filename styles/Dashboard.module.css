@@ -13,7 +13,7 @@
 .grid_container {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    min-height: 85vh;
+    min-height: 100vh;
 }
 
 .side_bar {
@@ -78,10 +78,11 @@
 .profile p {
     display: flex;
     gap: 8px;
-    align-items: center;
+    text-align: center;
 
     font-size: 1.6rem;
     font-family: 'Source Sans Pro', sans-serif;
+    max-width: 100%;
 }
 
 .usercard_container {
@@ -119,4 +120,19 @@
 
 .loading {
     animation: spin 1s linear infinite;
+}
+
+@media screen and (max-width: 540px) {
+    .grid_container {
+        height: 10vh;
+    }
+
+    .profile {
+        margin-left: 4px;
+    }
+
+    .profile p {
+        flex-wrap: wrap;
+        font-size: 100%;
+    }
 }
