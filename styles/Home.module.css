@@ -103,16 +103,15 @@
 
 .container_cards {
     display: flex;
-    gap: 10%;
+    gap: 56px;
     flex-wrap: wrap;
     justify-content: center;
-    height: 500px;
 }
 
 .subject_card {
     display: flex;
     flex-direction: column;
-    gap: 25%;
+    gap: 30%;
     align-items: center;
 
     padding: 2% 1% 1% 1%;
