@@ -11,7 +11,6 @@ interface TopicLinkProps {
 
 export default function TopicLink({id, name, createdAt, subjectId, color}: TopicLinkProps) {
     const date = new Date(createdAt)
-    console.log(date)
     return (
         <div className = {styles.topic_card} style = {{borderColor: color}}>
             <h5><Link href = {`/${subjectId}/topicos/${id}`}><a>{name}</a></Link></h5>
