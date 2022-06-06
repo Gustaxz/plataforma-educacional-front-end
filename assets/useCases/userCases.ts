@@ -3,7 +3,7 @@ import { UserProps } from "../interfaces"
 
 export async function newUser({email, password}: UserProps) {
 
-    const response = await api.post('http://localhost:3333/users', {
+    const response = await api.post('/users', {
         email, 
         password
     })
