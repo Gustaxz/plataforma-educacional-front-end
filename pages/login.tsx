@@ -29,7 +29,9 @@ export default function Login() {
                 setCorrectLogin(false)
             } else {
                 signIn(response.id)
-                Router.push('/dashboard')
+                setTimeout(() => {
+                    Router.push('/dashboard')
+                }, 1000)
             }
         }
 
