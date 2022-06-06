@@ -54,3 +54,21 @@
 .topic_card p {
     opacity: 0.5;
 }
+
+
+@media screen and (max-width: 520px) {
+
+    .container_topics {
+        margin: 12% 0 10% 5%;
+    }
+    
+    .topic_card {
+        padding: 12px;
+        width: 80%;
+    }
+
+    .topic_card a {
+        font-size: 1.6rem;
+    }
+    
+}
