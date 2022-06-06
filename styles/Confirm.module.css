@@ -108,3 +108,21 @@
     animation: spin 1s linear infinite;
 }
 
+@media screen and (max-width: 920px) {
+    .container_form {
+        width: 80vw;
+    }
+
+    .warning {
+        width: 100%;
+    }
+
+    .container_form h2 {
+        margin: 8% 0;
+        font-size: 1.6rem;
+    }
+
+    .form {
+        width: 80%;
+    }
+}
