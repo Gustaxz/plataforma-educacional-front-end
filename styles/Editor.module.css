@@ -1,20 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Passion+One&family=Poppins&family=Roboto+Mono&display=swap');
+
+
 .header {
     padding: 20px;
-    background: #0077b6;
+    background: #5D64DA;
 }
 
 .main_header {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.logo {
-    border-radius: 50%;
-    background-color: white;
-    width: 30px;
-    height: 30px;
-}
 
 .main_header_logo {
     display: flex;
@@ -22,37 +20,64 @@
     gap: 10px;
     font-size: 1.5em;
     color: white;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
-.header_anchor {
+.main_header_logo img {
+    cursor: pointer;
+}
+
+.main_header h2 {
     color: white;
+}
+
+.input_infos {
     display: flex;
-    justify-content: center;
-    margin-top: 15px;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 1.5em;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .input_title {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     gap: 5px;
     margin: 20px auto;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.3rem;
+    gap: 8px;
+}
+
+.input_title input {
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid rgb(66, 66, 66);
+    width: 20%;
 }
 
 .input_select {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.3rem;
     display: flex;
-    justify-content: center;
-    gap: 5px;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
     width: 100%;
 }
 
-.editor {
+.input_select select {
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.editor_container {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 54px;
 }
+
 
 .div_send {
     display: flex;
@@ -64,6 +89,11 @@
     padding: 10px;
 }
 
+.send {
+    padding: 12px;
+    width: 16%;
+}
+
 @keyframes spin {
     to {
         transform: rotate(360deg);
@@ -72,4 +102,20 @@
 
 .loading {
     animation: spin 1s linear infinite;
+}
+
+@media screen and (max-width: 620px) {
+    .editor_container {
+        width: 70%;
+    }
+
+    .input_title input {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .editor_container {
+        width: 30%;
+    }
 }

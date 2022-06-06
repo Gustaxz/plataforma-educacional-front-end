@@ -7,25 +7,10 @@ import Image from "next/image"
 import styles from "../../styles/Dashboard.module.css"
 import { useContext, useEffect } from "react"
 import { LoginContext } from "../../contexts/LoginContext"
+import { UserInfos, UserPropsData } from "../../assets/interfaces"
 
-interface UserProps {
-    user: {
-        id: string
-        email: string
-        password: string
-        infos: string
-        adm: boolean
-        teacher: boolean
-    }
-}
 
-interface UserInfos {
-    name: string
-    lastname: string
-    bio: string
-}
-
-export default function Dashboard(props : UserProps) {
+export default function Dashboard(props : UserPropsData) {
 
     const { setLogin } = useContext(LoginContext)
     const infos: UserInfos = JSON.parse(JSON.parse(props.user.infos))

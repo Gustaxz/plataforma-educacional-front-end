@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Router from "next/router";
-import { CircleNotch } from "phosphor-react";
+import { CircleNotch, Eye, EyeSlash } from "phosphor-react";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { getUser } from "../assets/useCases/userCases";
@@ -15,6 +15,7 @@ export default function Login() {
     const [isSending, setIsSending] = useState(false)
     const [correctEmail, setCorrectEmail] = useState(true)
     const [correctLogin, setCorrectLogin] = useState(true)
+    const [showPassword, setShowPassword] = useState(false)
 
     
     const onSubmit = async (data: any) => {
@@ -57,15 +58,25 @@ export default function Login() {
                         <div className={styles.inputs}>
                             <label htmlFor="email">Email: </label>
                             <input {...register("email", { required: true, minLength: 10 })} 
-                                type="text" name="email" placeholder="Coloque seu e-mail cadastrado"
+                                type= "text" name="email" placeholder="Coloque seu e-mail cadastrado"
                                 onChange={() => cleadnDisplay(true)} />
+                                
                         </div>
 
                         <div className={styles.inputs}>
                             <label htmlFor="password">Senha: </label>
-                            <input {...register("password", { required: true, minLength: 5 })}
-                                type="text" name="password" placeholder="Coloque sua senha cadastrada" 
-                                onChange={() => cleadnDisplay(true)} />
+                            <div className = {styles.inputs_container}>
+                                <input {...register("password", { required: true, minLength: 5 })}
+                                    type={ showPassword ? "text" : "password" }  name="password" 
+                                    placeholder="Coloque sua senha cadastrada" 
+                                    onChange={() => cleadnDisplay(true)} />
+                                    { showPassword ? 
+                                        <Eye size = {20} style = {{cursor: 'pointer'}} 
+                                            onClick = {() => setShowPassword(!showPassword)} /> : 
+                                        <EyeSlash size = {20} style = {{cursor: 'pointer'}}  
+                                            onClick = {() => setShowPassword(!showPassword)}/> 
+                                    }
+                            </div>
                         </div>        
                                 
                         <button type="submit" className={styles.form_buttom}>

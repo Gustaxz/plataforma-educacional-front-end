@@ -46,6 +46,16 @@
     margin: 0 auto;
 }
 
+.inputs_container {
+    display: flex;
+    align-items: center;
+    gap: 4%;
+}
+
+.inputs_container input {
+    width: 90%;
+}
+
 .inputs {
     display: flex;
     flex-direction: column;
@@ -97,16 +107,17 @@
     animation: spin 1s linear infinite;
 }
 
+
 @media screen and (max-width: 520px) {
     
-    .full_container {
+    .grid_container {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100vh;
     }
 
-    .side_container {
+    .side_bg {
         display: none;
     }
 
@@ -116,6 +127,7 @@
 
     .form {
         width: 85%;
+        gap: 12px;
     }
 
     .warning {

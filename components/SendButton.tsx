@@ -8,14 +8,15 @@ interface SendButtonProps {
     contentString: string
     title?: string
     subject?: string
+    madeBy? : string
 }
 
-export default function SendButton({contentString, title, subject}: SendButtonProps) {
+export default function SendButton({contentString, title, subject, madeBy}: SendButtonProps) {
     const [sending, setSending] = useState(false)
     
     const handleSendData = async () => {
         setSending(true)
-        await sendData({container: contentString, title: title, subject: subject})
+        await sendData({container: contentString, title, subject, madeBy})
         setSending(false)
     }
     
