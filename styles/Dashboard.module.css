@@ -123,6 +123,14 @@
 }
 
 @media screen and (max-width: 540px) {
+    .null_profile {
+        margin-left: 5%;
+    }
+
+    .null_profile p:first-child {
+        flex-wrap: wrap;
+    }
+
     .grid_container {
         height: 10vh;
     }
