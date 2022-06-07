@@ -8,6 +8,7 @@ import styles from "../../styles/Dashboard.module.css"
 import { useContext, useEffect } from "react"
 import { LoginContext } from "../../contexts/LoginContext"
 import { UserInfos, UserPropsData } from "../../assets/interfaces"
+import { MyDropdown } from "../../components/MenuDropdown"
 
 
 export default function Dashboard(props : UserPropsData) {
@@ -26,7 +27,10 @@ export default function Dashboard(props : UserPropsData) {
             <Head><title>Dashboard - Profile</title></Head>
             <header className = {styles.header}>
                 <Link href="/"><a><Image src = "/images/mainicon.png" width={48} height ={48}/></a></Link>
-                <h2>Olá {props.user.infos ? (infos.name) : '!'}</h2>
+                <div className={styles.name_dropdown}>
+                    <h2>Olá {props.user.infos ? (infos.name) : '!'}</h2>
+                    <MyDropdown />
+                </div>
             </header>
             <div className={styles.grid_container}>
                 <div className={styles.side_bar}>

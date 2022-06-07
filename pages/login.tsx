@@ -3,6 +3,7 @@ import Router from "next/router";
 import { CircleNotch, Eye, EyeSlash } from "phosphor-react";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import { getCookies } from "../assets/useCases/cookies";
 import { getUser } from "../assets/useCases/userCases";
 import { LoginContext } from "../contexts/LoginContext";
 
@@ -93,4 +94,19 @@ export default function Login() {
             </div>
         </>
     )
+}
+
+export async function getServerSideProps(ctx?: any) {
+    const user = await getCookies(ctx)
+
+    if (user) {
+        return {
+            redirect: {
+                destination: "/dashboard",
+                permanent: false
+            }
+        }
+    }
+
+    return { props : {} }
 }
