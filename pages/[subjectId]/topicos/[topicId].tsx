@@ -50,7 +50,7 @@ export default function Topics({response}: TopicsProps) {
                 </div>
             </main>
             <footer className={styles.footer} style = {{background: subject?.color}}>
-                Acesse o respositório: <Link href = "/"><a><GithubLogo 
+                Acesse o respositório: <Link href = "https://github.com/Gustaxz/plataforma-educacional-front-end"><a><GithubLogo 
                     size={36} style = {{color: "purple", marginLeft: '8px'}}/></a></Link>
             </footer>
         </>
