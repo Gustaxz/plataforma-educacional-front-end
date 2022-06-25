@@ -13,6 +13,8 @@ import { MyDropdown } from "../../components/MenuDropdown"
 
 export default function Dashboard(props : UserPropsData) {
 
+    console.log('hora vinda na renderização do Dashboard',new Date())
+
     const { setLogin } = useContext(LoginContext)
     const infos: UserInfos = JSON.parse(JSON.parse(props.user.infos))
 
@@ -64,6 +66,8 @@ export default function Dashboard(props : UserPropsData) {
 }
 
 export async function getServerSideProps(ctx?: any) {
+
+    console.log('Hora vinda no server side props', new Date())
     
     const user = await getCookies(ctx)
 

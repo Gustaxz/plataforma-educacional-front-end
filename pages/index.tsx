@@ -14,10 +14,10 @@ const Home = () => {
       </Head>
 
       <header className={styles.header}>
-        <div className={styles.header_top}>
-          <Image src="/images/mainicon.png" width={56} height={24} />
+         <div className={styles.header_top}>
+          <Image src="/images/mainicon.png" width={56} height={24} alt="logo fundação futuro"/>
           <div className={styles.title}>Fundação Futuro</div>
-        </div>
+        </div> 
         <div className={styles.header_container}>
           <h1>Agora seu estudo pode ser melhor que nunca</h1>
           <p>
@@ -33,7 +33,7 @@ const Home = () => {
               <a>Login</a>
             </Link>
           </div>
-        </div>
+        </div> 
       </header>
       <main>
         <section className={styles.container_cards_full}>
